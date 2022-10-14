@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to right, #3c3b3f, #605c3c);
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+}
+
+.container > button {
+    cursor: pointer;
+    background: rgba(255, 255, 255, .75);
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid white;
+}
+
+.container > button:hover {
+    background:rgba(255, 255, 255, .9);
+}
+
+.span {
+    grid-column: span 2;
+}
+
+.display {
+    grid-column: 1 / -1;
+    background: rgba(0, 0, 0, .50);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display .current-operation {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.display .previous-operation {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
