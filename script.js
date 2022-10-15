@@ -13,11 +13,15 @@ class Calculator {
     }
 
     delete() {
+        this.currentOperation = this.currentOperation.toString().slice(0, -1);
 
     }
 
     updateDisplay() {
         this.currentOperandText.innerText = this.currentOperation;
+        if(this.operation != null) {
+            this.previousOperandText.innerText = `${this.previousOperation} ${this.operation}`
+        }
         this.previousOperandText.innerText = this.previousOperation;
     }
 
@@ -95,5 +99,15 @@ operand.forEach(button => {
 
  equalBtn.addEventListener('click', ()=> {
         calculator.compute();
+        calculator.updateDisplay();
+})
+
+ allClearBtn.addEventListener('click', ()=> {
+        calculator.clear();
+        calculator.updateDisplay();
+})
+
+ delBtn.addEventListener('click', ()=> {
+        calculator.delete();
         calculator.updateDisplay();
 })
