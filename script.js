@@ -22,7 +22,7 @@ class Calculator {
         if(this.operation != null) {
             this.previousOperandText.innerText = `${this.previousOperation} ${this.operation}`
         }
-        this.previousOperandText.innerText = this.previousOperation;
+        // this.previousOperandText.innerText = this.previousOperation;
     }
 
     appendNumber(number) {
